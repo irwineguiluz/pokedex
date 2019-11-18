@@ -11,7 +11,7 @@ import {
 const fetchPokemonEpic = action$ =>
   action$.ofType(FETCH_POKEMON)
     .switchMap(({payload}) =>
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${payload}`)
+      axios.get(`https://pokeapi.co/api/v2/pokemon/${payload.toLowerCase()}`)
       .then(fetchPokemonSuccess)
       .catch(fetchPokemonFailure)
 );

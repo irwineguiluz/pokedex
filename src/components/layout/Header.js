@@ -5,7 +5,7 @@ class Header extends Component {
   render() {
     return (
       <header className="pokedex__header">
-        <img alt="" src={Logo} />
+        <img alt="" src={Logo} className="pokedex__header-logo" />
       </header>
     );
   }
