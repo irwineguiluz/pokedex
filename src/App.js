@@ -26,23 +26,30 @@ class App extends Component {
       error,
     } = this.props;
 
-    console.log('props', this.props);
+    const {
+      search,
+    } = this.state;
 
     return (
       <Template>
-        <input
-          type="text"
-          id="pokemon_name"
-          name="search_pokemon"
-          value={this.state.search}
-          onChange={this.handleChange}
-        />
+        <div className="search-bar-wrapper">
+          <div className="search-bar-title">Search your favorite pokémon!</div>
+          <div className="search-container">
+            <input
+              type="text"
+              id="pokemon_name"
+              name="search_pokemon"
+              value={search}
+              onChange={this.handleChange}
+              autoComplete="off"
+            />
+            <button
+              onClick={() => fetchPokemon(search)}
+            ><i className="fa fa-search"></i></button>
+          </div>
+        </div>
 
-        {error && <div>{ error }</div>}
-
-        <button
-          onClick={() => fetchPokemon(this.state.search)}
-        >Fetch pokemon</button>
+        {error && <div className="error">{ error }</div>}
       </Template>
     );
   }

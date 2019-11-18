@@ -1,11 +1,39 @@
 .pokedex__template {
+  font-family: 'Lato', sans-serif;
+
   .pokedex__header {
     background-color: $red;
     display: flex;
     justify-content: center;
+    padding: 10px;
+
+    .pokedex__header-logo {
+      width: 44.745vw;
+
+      @include large-mobile {
+        width: 200px;
+      }
+    }
 
     .pokedex__logo {
       width: 50%;
     }
   }
+
+  .pokedex__template-container {
+    display: flex;
+    justify-content: center;
+
+    .pokedex__template-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 600px;
+
+      .error {
+        margin: 0 auto;
+      }
+    }
+  }
+
 }

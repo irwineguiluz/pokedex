@@ -5,7 +5,11 @@ const Template = (props) => {
   return (
     <div className="pokedex__template">
       <Header />
-      {props.children}
+      <div className="pokedex__template-container">
+        <div className="pokedex__template-wrapper">
+          {props.children}
+        </div>
+      </div>
     </div>
   );
 }
