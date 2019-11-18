@@ -1,6 +1,6 @@
-Developed by Irwin Eguiluz , required by Runa HR.
-Pokedex to see basic info about pokemon you want
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), I developed it with Redux, Redux Observable Rxjs and Axios.
+Developed by Irwin Eguiluz , required by Runa HR.<br />
+Pokedex to see basic info about pokemon you want.<br />
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), I developed it with Redux, Redux Observable Rxjs and Axios, SCSS (without css framework).
 
 
 ## Available Scripts
