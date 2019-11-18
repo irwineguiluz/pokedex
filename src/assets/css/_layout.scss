@@ -1,5 +1,9 @@
-.pokedex__container {
+.pokedex__template {
   .pokedex__header {
+    background-color: $red;
+    display: flex;
+    justify-content: center;
+
     .pokedex__logo {
       width: 50%;
     }
