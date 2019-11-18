@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './assets/css/main.scss';
+import Main from './routes';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { createStore, applyMiddleware } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
+import { Provider } from 'react-redux';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { BrowserRouter } from 'react-router-dom';
+
+import rootReducer from './configStore/rootReducer';
+import { rootEpic } from './epics';
+
+
+const epicMiddleware = createEpicMiddleware();
+
+const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+
+epicMiddleware.run(rootEpic);
+
+const appWithProvider = (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Main />
+      </BrowserRouter>
+    </Provider>
+);
+
+ReactDOM.render(appWithProvider, document.getElementById('root'));
